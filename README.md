@@ -20,15 +20,8 @@ Dependencies:
 | ag-grid-community |  25.3.0  |
 | ag-grid-enterprise |  25.3.0 |
 | moment |  2.29.1  |
-| rxjs |  10.0.0  |
-| @ng-bootstrap/ng-bootstrap |  7.3.0  |
-
-tslib
-2.3.1
-
-typescript
-4.3.5
-
-zone.js
-0.11.4
+| rxjs |  7.3.0  |
+| tslib |  2.3.1  |
+| typescript |  4.3.5  |
+| zone.js |  0.11.4  |
 
