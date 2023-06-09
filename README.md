@@ -1,6 +1,6 @@
 # VGHTC_CostAnalysisSystem
 2021 VGHTC Summer Intern  
-Dependencies:  
+
 |  Toolbox/Library  | Version |
 |-------------------|:-------:|
 | @angular/animations |  12.2.2  |
