@@ -1,0 +1,10 @@
+<app-manager-header></app-manager-header>
+<div class="container-fluid">
+  <button class="btn btn-outline-primary btn-sm" (click)="toSave()">儲存</button>
+  <div id="pdfTable" #pdfTable>
+    <ag-grid-angular style="width: 90%; height: 100%;" class="ag-theme-alpine" [rowData]="rowData"
+      [columnDefs]="columnDefs" (gridReady)="onGridReady($event)" [frameworkComponents]="frameworkComponents"
+      [statusBar]="statusBar">
+    </ag-grid-angular>
+  </div>
+</div>

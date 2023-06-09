@@ -1,0 +1,38 @@
+<div class="container">
+  <table class="table table-striped" id="htmlData">
+    <thead>
+      <tr>
+        <th scope="col">分析項目</th>
+        <th scope="col">部別單位</th>
+        <th scope="col">人員別</th>
+        <th scope="col">人數(A)</th>
+        <th scope="col">每人每分鐘成本(B)</th>
+        <th scope="col">前置期(分鐘)</th>
+        <th scope="col">初期(分鐘)</th>
+        <th scope="col">中期(分鐘)</th>
+        <th scope="col">後期(分鐘)</th>
+        <th scope="col">耗用時間(分鐘)(C)</th>
+        <th scope="col">成本小計(D=A*B*C)</th>
+        <th scope="col">成本合計(E=ΣD)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of _humanResource">
+        <td>人事成本</td>
+        <td>{{ data.department }}</td>
+        <td>{{ data.job }}</td>
+        <td>{{ data.numbers }}</td>
+        <td>{{ data.cost_min }}</td>
+        <td>{{ data.stage1 }}</td>
+        <td>{{ data.stage2 }}</td>
+        <td>{{ data.stage3 }}</td>
+        <td>{{ data.stage4 }}</td>
+        <td>{{ data.total_min }}</td>
+        <td>{{ data.partial_cost }}</td>
+        <td>{{ data.partial_cost }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-outline-primary btn-sm" (click)="save()">送出</button>
+  <button class="btn btn-outline-secondary btn-sm" (click)="export()" [disabled] = "!allowexport">匯出pdf檔</button>
+</div>

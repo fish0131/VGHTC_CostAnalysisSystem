@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <h4><b id="department">{{ user_department }}</b><b>申請紀錄</b></h4>
+  <button class="btn btn-outline-primary btn-sm" (click)="toAdd()">
+    新增申請單
+  </button>
+  <div id="pdfTable" #pdfTable>
+    <ag-grid-angular
+      style="width: 90%; height: 100%;"
+      class="ag-theme-alpine"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      (gridReady)="onGridReady($event)"
+      [frameworkComponents]="frameworkComponents"
+    >
+    </ag-grid-angular>
+  </div>
+</div>

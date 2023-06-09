@@ -1,0 +1,13 @@
+/* Add application styles & imports to this file! */
+
+@import 'ag-grid-community/dist/styles/ag-grid.css';
+@import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+
+html,
+body,
+#app {
+  height: 90%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}

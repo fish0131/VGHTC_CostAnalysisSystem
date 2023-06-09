@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <button class="btn btn-outline-primary btn-sm" (click)="onAddButtonClick()">
+    新增
+  </button>
+  <button class="btn btn-outline-danger btn-sm" (click)="onDeleteButtonClick()">
+    刪除</button
+  ><br />
+  <!--  -->
+  <ag-grid-angular
+    style="width: 90%; height: 500px;"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [rowData]="rowData"
+    (gridReady)="onGridReady($event)"
+    (cellValueChanged)="onCellValueChanged($event)"
+    [editType]="'fullRow'"
+    [frameworkComponents]="frameworkComponents"
+    [groupIncludeTotalFooter]="true"
+    [gridOptions]="gridOptions"
+    [aggFuncs]="aggFuncs"
+    rowSelection="multiple"
+    #agGrid
+  >
+  </ag-grid-angular>
+  <br />
+</div>

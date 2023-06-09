@@ -1,0 +1,44 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+      <br>
+      <img src="https://www.vghtc.gov.tw/Content/img/logo.png">
+      <br><br>
+      <label class="title">
+      <h3 class="welcome">單項成本分析系統</h3>
+      <h6 class="hint">請輸入正確帳號及密碼</h6>
+    </label>
+
+      <div class="form-group">
+        <input
+        required
+        class="form-control"
+        formControlName="account"
+        name="account"
+        type="text"
+        placeholder="請輸入帳號"
+      />
+        <br />
+        <input
+        required
+        class="form-control"
+        formControlName="password"
+        name="password"
+        type="password"
+        placeholder="請輸入密碼"
+      />
+        <br />
+        <div *ngIf="loading" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        <div id="formFooter">
+          <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="loginForm.invalid"
+        >
+          登入
+        </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

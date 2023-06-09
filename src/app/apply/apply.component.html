@@ -1,0 +1,54 @@
+<app-apply-header></app-apply-header>
+<div id="identity-detail">
+  科別：<input type="text" name="department" [(ngModel)]="_applyData.department" /> &nbsp; &nbsp;
+  醫療項目： <input type="text" name="item" [(ngModel)]="_applyData.medical_item"/>&nbsp; &nbsp;
+  申請人： <input type="text" name="name" [(ngModel)]="_applyData.createNMC"/> &nbsp; &nbsp;
+  日期： {{ _applyData.date | formatDateTime }} &nbsp; &nbsp;
+  <!--[ngModel]="_applyData.date | formatDateTime" (ngModelChange)="_applyData.date=$event"-->
+</div>
+<mat-tab-group id="tab-group" dynamicHeight>
+  <mat-tab label="用人成本">
+    <div class="example-large-box ">
+      <br />
+      <app-apply-human-resource [(data)]="_applyData.applyData.humanResource"></app-apply-human-resource>
+    </div>
+  </mat-tab>
+  <mat-tab label="設備折舊費用">
+    <div class="example-large-box">
+      <br />
+      <app-apply-device-old [(data)]="_applyData.applyData.deviceDepreciationTop"
+        [(data2)]="_applyData.applyData.deviceDepreciationBottom"></app-apply-device-old>
+    </div>
+  </mat-tab>
+  <mat-tab label="設備修護費用">
+    <div class="example-large-box">
+      <br />
+      <app-apply-device-fix [(data)]="_applyData.applyData.deviceFixTop"
+        [(data2)]="_applyData.applyData.deviceFixBottom"></app-apply-device-fix>
+    </div>
+  </mat-tab>
+  <mat-tab label="轉代檢費用">
+    <div class="example-large-box">
+      <br />
+      <app-apply-convert [(data)]="_applyData.applyData.transferExam"></app-apply-convert>
+    </div>
+  </mat-tab>
+  <mat-tab label="計價藥品及材料成本">
+    <div class="example-large-box">
+      <br />
+      <app-apply-medicine-priced [(data)]="_applyData.applyData.materialWithPrice"></app-apply-medicine-priced>
+    </div>
+  </mat-tab>
+  <mat-tab label="不計價藥品及材料成本">
+    <div class="example-large-box">
+      <br />
+      <app-apply-medicine-notpriced [(data)]="_applyData.applyData.materialNoPrice"></app-apply-medicine-notpriced>
+    </div>
+  </mat-tab>
+  <mat-tab label="資料預覽">
+    <div class="example-large-box">
+      <br />
+      <app-data-preview [(data)]="_applyData.applyData" (submit)="submitData($event)"></app-data-preview>
+    </div>
+  </mat-tab>
+</mat-tab-group>

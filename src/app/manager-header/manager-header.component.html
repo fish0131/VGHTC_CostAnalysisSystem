@@ -1,0 +1,24 @@
+<div class="main-part">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="https://www.vghtc.gov.tw/Content/img/logo.png" />
+      <ul class="navbar-nav">
+        <b>{{ name }} 同仁，您好 &nbsp;</b>
+        <li class="nav-item">
+          <button class="btn btn-primary btn-sm" (click)="goBack()">
+          回選單
+        </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-secondary btn-sm" (click)="toLogout()">
+          登出
+        </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="identity-detail">
+    主計室： {{ name }} &nbsp; &nbsp;
+    日期： {{ today | date:'yyyy-MM-dd' }} &nbsp; &nbsp;
+  </div>
+</div>

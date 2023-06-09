@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <button class="btn btn-outline-primary btn-sm" (click)="addItems()">
+    新增
+  </button>
+  <button class="btn btn-outline-secondary btn-sm" (click)="submitData($event)">
+    儲存
+  </button>
+  <button class="btn btn-outline-danger btn-sm" (click)="onRemoveSelected()">
+    刪除
+  </button>
+
+  <div id="pdfTable" #pdfTable>
+    <ag-grid-angular
+      style="width: 90%; height: 100%;"
+      class="ag-theme-alpine"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      rowSelection="multiple"
+      (gridReady)="onGridReady($event)"
+      rowMultiSelectWithClick="true"
+    >
+    </ag-grid-angular>
+  </div>
+</div>

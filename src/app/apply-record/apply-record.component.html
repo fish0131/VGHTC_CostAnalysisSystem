@@ -1,0 +1,23 @@
+<div class="main-part">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="https://www.vghtc.gov.tw/Content/img/logo.png" />
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <b>{{ name }} 同仁，您好 &nbsp;</b>
+          <button
+            class="btn btn-primary btn-sm"
+            *ngIf="manager"
+            (click)="goBack()"
+          >
+            回選單
+          </button>
+          <button class="btn btn-secondary btn-sm" (click)="toLogout()">
+            登出
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<app-record-list></app-record-list>

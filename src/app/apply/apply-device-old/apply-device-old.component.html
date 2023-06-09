@@ -1,0 +1,70 @@
+<h4><span class="badge rounded-pill">設備查詢</span></h4>
+<form>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+            </svg>查詢條件
+          </td>
+          <td style="text-align: right">
+            <input type="button" value="查詢"><input type="reset" value="清除">
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <b>財產碼-流水號：</b><input type="text" name="EquNo" id="EquNo">
+          </td>
+          <td>
+            <b>設備名稱：</b><input type="text" name="equName" id="equName">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+<br>
+<div class="container-fluid">
+  <button class="btn btn-outline-primary btn-sm" (click)="onAddButtonClick()">
+    新增
+  </button>
+  <button class="btn btn-outline-danger btn-sm" (click)="onDeleteButtonClick()">
+    刪除</button><br />
+  <div class="row">
+    <div class="col-2">
+      <input id="topcb" type="checkbox" />新增此區域
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
+      </svg>
+    </div>
+    <div class="col-8">
+      <!--<app-device-dropdown></app-device-dropdown>-->
+    </div>
+  </div>
+  <ag-grid-angular style="width: 90%; height: 300px;" class="ag-theme-alpine" [columnDefs]="columnDefs"
+    [rowData]="rowData" (gridReady)="onGridReady($event)" (cellValueChanged)="onCellValueChanged($event)"
+    [editType]="'fullRow'" [frameworkComponents]="frameworkComponents" [groupIncludeTotalFooter]="true"
+    [gridOptions]="gridOptions" [aggFuncs]="aggFuncs" rowSelection="multiple" #agGrid>
+  </ag-grid-angular>
+  <br />
+  <input id="bottomcb" type="checkbox" />新增此區域
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short"
+    viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
+  </svg>
+
+  <ag-grid-angular style="width: 90%; height: 300px;" class="ag-theme-alpine" [columnDefs]="columnDefs2"
+    [rowData]="rowData2" (gridReady)="onGridReady($event)" [editType]="'fullRow'"
+    [frameworkComponents]="frameworkComponents" [groupIncludeTotalFooter]="true" [gridOptions]="gridOptions"
+    [aggFuncs]="aggFuncs" rowSelection="multiple" #agGrid2>
+  </ag-grid-angular>
+</div>

@@ -1,0 +1,10 @@
+#pdfTable {
+  height: 100%;
+  width: 100%;
+}
+
+.container-fluid {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 100%;
+}

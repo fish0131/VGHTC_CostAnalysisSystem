@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <button class="btn btn-outline-primary btn-sm" (click)="onAddButtonClick()">
+    新增
+  </button>
+  <button class="btn btn-outline-danger btn-sm" (click)="onDeleteButtonClick()">
+    刪除</button
+  ><br />
+  <div class="row">
+    <div class="col-2">
+      <input id="topcb" type="checkbox" />新增此區域
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-arrow-down-short"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+        />
+      </svg>
+    </div>
+    <div class="col-8">
+      <!--<app-device-dropdown></app-device-dropdown>-->
+    </div>
+  </div>
+  <ag-grid-angular
+    style="width: 90%; height: 300px;"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [rowData]="rowData"
+    (gridReady)="onGridReady($event)"
+    (cellValueChanged)="onCellValueChanged($event)"
+    [editType]="'fullRow'"
+    [frameworkComponents]="frameworkComponents"
+    [groupIncludeTotalFooter]="true"
+    [gridOptions]="gridOptions"
+    [aggFuncs]="aggFuncs"
+    rowSelection="multiple"
+    #agGrid
+  >
+  </ag-grid-angular
+  ><br />
+  <input id="bottomcb" type="checkbox" />新增此區域
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-arrow-down-short"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+    />
+  </svg>
+
+  <ag-grid-angular
+    style="width: 90%; height: 300px;"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs2"
+    [rowData]="rowData2"
+    (gridReady)="onGridReady($event)"
+    [editType]="'fullRow'"
+    [frameworkComponents]="frameworkComponents"
+    [groupIncludeTotalFooter]="true"
+    [gridOptions]="gridOptions"
+    [aggFuncs]="aggFuncs"
+    rowSelection="multiple"
+    #agGrid2
+  >
+  </ag-grid-angular>
+</div>

@@ -1,0 +1,22 @@
+.container-fluid {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  height: 100%;
+}
+
+#pdfTable {
+  height: 77%;
+  width: 100%;
+}
+
+#topcb {
+  margin-top: 15px;
+}
+
+.badge {
+  background-color: rgb(118, 190, 192);
+}
+
+form {
+  border: 2px solid rgb(118, 190, 192);
+}
